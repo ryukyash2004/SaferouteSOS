@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Users, MapPin, History as HistoryIcon } from 'lucide-react';
+import { Home, Users, MapPin, History as HistoryIcon, FileText } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -10,6 +10,7 @@ const navItems = [
   { href: '/contacts', label: 'Contacts', icon: Users },
   { href: '/map', label: 'Map', icon: MapPin },
   { href: '/history', label: 'History', icon: HistoryIcon },
+  { href: '/project-report', label: 'Project Report', icon: FileText },
 ];
 
 export default function MainNav() {
