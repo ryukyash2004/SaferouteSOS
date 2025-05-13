@@ -195,7 +195,8 @@ function MapDisplay() {
     }["MapDisplay.useEffect"], []); // Fetch location on mount
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "MapDisplay.useEffect": ()=>{
-            if (location) {
+            // Check if location is valid before using it
+            if (location && typeof location.latitude === 'number' && typeof location.longitude === 'number') {
                 const newCenter = {
                     lat: location.latitude,
                     lng: location.longitude
@@ -206,6 +207,10 @@ function MapDisplay() {
                     latitude: location.latitude,
                     longitude: location.longitude
                 });
+            } else {
+                // If location is invalid, fallback to defaultCenter and log an error
+                setMapCenter(defaultCenter);
+                console.error("Invalid location data received, using default center.");
             }
         }
     }["MapDisplay.useEffect"], [
@@ -219,7 +224,7 @@ function MapDisplay() {
                     className: "h-16 w-16 text-destructive mb-4"
                 }, void 0, false, {
                     fileName: "[project]/src/components/map/map-display.tsx",
-                    lineNumber: 37,
+                    lineNumber: 42,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -227,7 +232,7 @@ function MapDisplay() {
                     children: "Map Unavailable"
                 }, void 0, false, {
                     fileName: "[project]/src/components/map/map-display.tsx",
-                    lineNumber: 38,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -235,7 +240,7 @@ function MapDisplay() {
                     children: "Google Maps API Key is not configured. Please set it up to use this feature."
                 }, void 0, false, {
                     fileName: "[project]/src/components/map/map-display.tsx",
-                    lineNumber: 39,
+                    lineNumber: 44,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -245,13 +250,13 @@ function MapDisplay() {
                     className: "mt-4 rounded-md opacity-50 max-w-full h-auto"
                 }, void 0, false, {
                     fileName: "[project]/src/components/map/map-display.tsx",
-                    lineNumber: 42,
+                    lineNumber: 47,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/map/map-display.tsx",
-            lineNumber: 36,
+            lineNumber: 41,
             columnNumber: 7
         }, this);
     }
@@ -263,7 +268,7 @@ function MapDisplay() {
                     className: "h-12 w-12 animate-spin text-primary"
                 }, void 0, false, {
                     fileName: "[project]/src/components/map/map-display.tsx",
-                    lineNumber: 55,
+                    lineNumber: 60,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -271,13 +276,13 @@ function MapDisplay() {
                     children: "Loading Map & Location..."
                 }, void 0, false, {
                     fileName: "[project]/src/components/map/map-display.tsx",
-                    lineNumber: 56,
+                    lineNumber: 61,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/map/map-display.tsx",
-            lineNumber: 54,
+            lineNumber: 59,
             columnNumber: 7
         }, this);
     }
@@ -289,7 +294,7 @@ function MapDisplay() {
                     className: "h-16 w-16 text-destructive mb-4"
                 }, void 0, false, {
                     fileName: "[project]/src/components/map/map-display.tsx",
-                    lineNumber: 64,
+                    lineNumber: 69,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -297,7 +302,7 @@ function MapDisplay() {
                     children: "Error Fetching Location"
                 }, void 0, false, {
                     fileName: "[project]/src/components/map/map-display.tsx",
-                    lineNumber: 65,
+                    lineNumber: 70,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -305,7 +310,7 @@ function MapDisplay() {
                     children: geoError
                 }, void 0, false, {
                     fileName: "[project]/src/components/map/map-display.tsx",
-                    lineNumber: 66,
+                    lineNumber: 71,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -313,7 +318,7 @@ function MapDisplay() {
                     children: "Try Again"
                 }, void 0, false, {
                     fileName: "[project]/src/components/map/map-display.tsx",
-                    lineNumber: 67,
+                    lineNumber: 72,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -323,13 +328,13 @@ function MapDisplay() {
                     className: "mt-4 rounded-md opacity-50 max-w-full h-auto"
                 }, void 0, false, {
                     fileName: "[project]/src/components/map/map-display.tsx",
-                    lineNumber: 68,
+                    lineNumber: 73,
                     columnNumber: 10
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/map/map-display.tsx",
-            lineNumber: 63,
+            lineNumber: 68,
             columnNumber: 7
         }, this);
     }
@@ -356,22 +361,22 @@ function MapDisplay() {
                     glyphColor: 'hsl(var(--primary-foreground))'
                 }, void 0, false, {
                     fileName: "[project]/src/components/map/map-display.tsx",
-                    lineNumber: 92,
+                    lineNumber: 97,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/map/map-display.tsx",
-                lineNumber: 91,
+                lineNumber: 96,
                 columnNumber: 11
             }, this)
         }, mapKey, false, {
             fileName: "[project]/src/components/map/map-display.tsx",
-            lineNumber: 80,
+            lineNumber: 85,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/map/map-display.tsx",
-        lineNumber: 79,
+        lineNumber: 84,
         columnNumber: 5
     }, this);
 }

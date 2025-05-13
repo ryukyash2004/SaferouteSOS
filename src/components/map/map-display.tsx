@@ -92,10 +92,20 @@ export default function MapDisplay() {
         mapId="saferouteSOSMap" // Optional: for custom styling in Google Cloud Console
         className="w-full h-full rounded-md"
       >
-        {location && (
-          <AdvancedMarker position={{ lat: location.latitude, lng: location.longitude }} title="My Current Location">
-            <Pin backgroundColor={'hsl(var(--primary))'} borderColor={'hsl(var(--primary-foreground))'} glyphColor={'hsl(var(--primary-foreground))'} />
-          </AdvancedMarker>
+        {location && typeof location.latitude === 'number' &&
+         typeof location.longitude === 'number' &&
+         !isNaN(location.latitude) &&
+         !isNaN(location.longitude) && (
+         <AdvancedMarker
+          position={{ lat: location.latitude, lng: location.longitude }}
+         title="My Current Location"
+         >
+         <Pin
+        background={'hsl(var(--primary))'}
+        borderColor={'hsl(var(--primary-foreground))'}
+        glyphColor={'hsl(var(--primary-foreground))'}
+         />
+        </AdvancedMarker>
         )}
       </Map>
     </APIProvider>
