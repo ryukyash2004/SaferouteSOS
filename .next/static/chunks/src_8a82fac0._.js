@@ -98,7 +98,7 @@ __turbopack_context__.s({
     "GOOGLE_MAPS_API_KEY": (()=>GOOGLE_MAPS_API_KEY)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
-const GOOGLE_MAPS_API_KEY = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""; // Note: For the map feature to work, you need to set NEXT_PUBLIC_GOOGLE_MAPS_API_KEY 
+const GOOGLE_MAPS_API_KEY = ("TURBOPACK compile-time value", "AIzaSyBlrYsQ28ow1wTAT0REuhq-tWkOq1XFWGI") || ""; // Note: For the map feature to work, you need to set NEXT_PUBLIC_GOOGLE_MAPS_API_KEY 
  // in your .env.local file.
  // Example: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=YOUR_ACTUAL_API_KEY
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {

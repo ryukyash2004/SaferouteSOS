@@ -22,11 +22,16 @@ export default function MapDisplay() {
   }, []); // Fetch location on mount
 
   useEffect(() => {
-    if (location) {
+    // Check if location is valid before using it
+    if (location && typeof location.latitude === 'number' && typeof location.longitude === 'number') {
       const newCenter = { lat: location.latitude, lng: location.longitude };
       setMapCenter(newCenter);
       setMapKey(Date.now()); // Force re-render of Map component with new center
       addLocationToHistory({ latitude: location.latitude, longitude: location.longitude });
+    } else {
+      // If location is invalid, fallback to defaultCenter and log an error
+      setMapCenter(defaultCenter);
+      console.error("Invalid location data received, using default center.");
     }
   }, [location]);
 

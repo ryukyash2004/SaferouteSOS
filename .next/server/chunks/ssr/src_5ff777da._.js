@@ -75,7 +75,7 @@ var { g: global, __dirname } = __turbopack_context__;
 __turbopack_context__.s({
     "GOOGLE_MAPS_API_KEY": (()=>GOOGLE_MAPS_API_KEY)
 });
-const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""; // Note: For the map feature to work, you need to set NEXT_PUBLIC_GOOGLE_MAPS_API_KEY 
+const GOOGLE_MAPS_API_KEY = ("TURBOPACK compile-time value", "AIzaSyBlrYsQ28ow1wTAT0REuhq-tWkOq1XFWGI") || ""; // Note: For the map feature to work, you need to set NEXT_PUBLIC_GOOGLE_MAPS_API_KEY 
  // in your .env.local file.
  // Example: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=YOUR_ACTUAL_API_KEY
 }}),
